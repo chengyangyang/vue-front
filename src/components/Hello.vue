@@ -15,7 +15,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .hello{
   background-color: azure;
   margin: auto;
