@@ -4,9 +4,10 @@
       <div class="shap-add"><button class="shap-add-butn" @click = "addData ()">新增商品</button></div>
       <div class="shap-body" v-for="(item,index) in shapList" :key="index">
         <div class="shap-content">
+          <img src="../../static/images/delete.png" style="width: 25px;height: 25px;position: absolute;z-index:1000;right:2px;top: 2px;" @click = "removeshap (index)" />
           <div class="shap-content-checkboxs"><input type="checkbox" :checked = "item.isCheckbox" @click = "isCheck (item)"/></div>
           <div class="shap-content-img-box">
-            <div class="shap-content-img"><img v-bind:src="item.imgPath"/></div>
+            <div class="shap-content-img"><img class="img-content" v-bind:src="item.imgPath"/></div>
           </div>
           <div class="shap-content-sp">
             <div>
@@ -31,7 +32,7 @@
         <div class="checkAll">
           全选
         </div>
-        <div class="summoney">总价：{{sumMoney}}</div>
+        <div class="summoney">总价：{{sumMoney | moneyFormat }}</div>
       </div>
     </div>
 </template>
@@ -86,15 +87,12 @@ export default {
           num: 1,
           isCheckbox: false
         }
-      ],
-      shapAddData: { imgPath: '../../static/images/5a4b6b107f295.jpg',
-        shapName: '添加的商品',
-        shapType: '新物种1',
-        oneMoney: 1001,
-        money: 1001,
-        num: 1,
-        isCheckbox: false
-      }
+      ]
+    }
+  },
+  filters: {
+    moneyFormat (money) {
+      return '￥' + money.toFixed(2)
     }
   },
   methods: {
@@ -142,7 +140,20 @@ export default {
       })
     },
     addData () {
-      this.shapList.push(this.shapAddData)
+      var shapAddData = { imgPath: '../../static/images/5a4b6b107f295.jpg',
+        shapName: '添加的商品',
+        shapType: '新物种1',
+        oneMoney: 1001,
+        money: 1001,
+        num: 1,
+        isCheckbox: false
+      }
+      this.shapList.push(shapAddData)
+      this.isCheckboxAll = false
+    },
+    removeshap (shap) {
+      this.shapList.splice(shap, 1)
+      this.summoney()
     }
   }
 }
@@ -166,6 +177,7 @@ export default {
     width: 350px;
     height: 100px;
     margin-top: 20px;
+    position: relative;
   }
   .shap-content-checkboxs{
     height: 100px;
@@ -224,7 +236,7 @@ export default {
     border-left-style: none;
     border-right-style: none;
   }
-  img{
+  .img-content{
     width: 100%;
     height: 100%;
   }
