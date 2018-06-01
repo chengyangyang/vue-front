@@ -1,9 +1,10 @@
 <template>
     <div class="shap">
       <div class="shap-head">我的购物车</div>
+      <div class="shap-add"><button class="shap-add-butn" @click = "addData ()">新增商品</button></div>
       <div class="shap-body" v-for="(item,index) in shapList" :key="index">
         <div class="shap-content">
-          <div class="shap-content-checkboxs"><input type="checkbox"/></div>
+          <div class="shap-content-checkboxs"><input type="checkbox" :checked = "item.isCheckbox" @click = "isCheck (item)"/></div>
           <div class="shap-content-img-box">
             <div class="shap-content-img"><img v-bind:src="item.imgPath"/></div>
           </div>
@@ -13,56 +14,135 @@
               <p class="shap-content-title">{{item.shapType}}</p>
             </div>
             <div class="shap-content-button">
-              <div class="shap-content-foot-left"><div class="shap-foot-money">￥100</div></div>
+              <div class="shap-content-foot-left"><div class="shap-foot-money">价格：￥{{item.money}}</div></div>
               <div class="shap-content-foot-right">
-                <button class="shap-content-foot-num">-</button>
+                <button class="shap-content-foot-num" @click = "addSub (item,false)">-</button>
                 <button class="shap-content-foot-num shap-content-foot-num-cent">{{item.num}}</button>
-                <button class="shap-content-foot-num">+</button>
+                <button class="shap-content-foot-num" @click = "addSub (item,true)">+</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div>
+        <div class="checkAll">
+          <input type="checkbox" :checked = "isCheckboxAll" @click = "checkAll (isCheckboxAll)"/>
+        </div>
+        <div class="checkAll">
+          全选
+        </div>
+        <div class="summoney">总价：{{sumMoney}}</div>
+      </div>
     </div>
 </template>
 
 <script>
+import index from '../router'
+
 export default {
   name: 'shap',
   data: function () {
     return {
+      isCheckboxAll: false,
+      sumMoney: 0,
       shapList: [
         { imgPath: '../../static/images/1511146983144371.jpg',
           shapName: '一个美丽的图片',
-          shapType: '新物种',
-          money: '1001',
-          num: '11'
+          shapType: '新物种1',
+          oneMoney: 1001,
+          money: 1001,
+          num: 1,
+          isCheckbox: false
         },
-        { imgPath: '../assets/1511146983144371.jpg',
-          shapName: '一个美丽的图片',
-          shapType: '新物种',
-          money: '1002',
-          num: '12'
+        { imgPath: '../../static/images/1511146983144371.jpg',
+          shapName: '天高任鸟飞',
+          shapType: '新物种2',
+          oneMoney: 1002,
+          money: 1002,
+          num: 1,
+          isCheckbox: false
         },
-        { imgPath: '../assets/1511146983144371.jpg',
-          shapName: '一个美丽的图片',
-          shapType: '新物种',
-          money: '1003',
-          num: '13'
+        { imgPath: '../../static/images/1511146983144371.jpg',
+          shapName: '海阔凭鱼跃',
+          shapType: '新物种3',
+          oneMoney: 1003,
+          money: 1003,
+          num: 1,
+          isCheckbox: false
         },
-        { imgPath: '../assets/1511146983144371.jpg',
-          shapName: '一个美丽的图片',
-          shapType: '新物种',
-          money: '1004',
-          num: '14'
+        { imgPath: '../../static/images/1511146983144371.jpg',
+          shapName: '难难难',
+          shapType: '新物种4',
+          oneMoney: 1004,
+          money: 1004,
+          num: 1,
+          isCheckbox: false
         },
-        { imgPath: '../assets/1511146983144371.jpg',
-          shapName: '一个美丽的图片',
-          shapType: '新物种',
-          money: '1005',
-          num: '15'
+        { imgPath: '../../static/images/1511146983144371.jpg',
+          shapName: '难于上青天',
+          shapType: '新物种5',
+          oneMoney: 1005,
+          money: 1005,
+          num: 1,
+          isCheckbox: false
         }
-      ]
+      ],
+      shapAddData: { imgPath: '../../static/images/5a4b6b107f295.jpg',
+        shapName: '添加的商品',
+        shapType: '新物种1',
+        oneMoney: 1001,
+        money: 1001,
+        num: 1,
+        isCheckbox: false
+      }
+    }
+  },
+  methods: {
+    isCheck: function (shap) {
+      shap.isCheckbox = !shap.isCheckbox
+      if (shap.isCheckbox) {
+        this.isCheckboxAll = true
+        this.shapList.forEach((item, index) => {
+          if (!item.isCheckbox) {
+            this.isCheckboxAll = false
+            return false
+          }
+        })
+      } else {
+        this.isCheckboxAll = false
+      }
+      this.summoney()
+    },
+    addSub (shap, flag) {
+      if (flag) {
+        shap.num += 1
+        shap.money = shap.oneMoney * shap.num
+      } else {
+        shap.num -= 1
+        if (shap.num < 1) {
+          shap.num = 1
+        }
+        shap.money = shap.oneMoney * shap.num
+      }
+      this.summoney()
+    },
+    checkAll (flag) {
+      this.isCheckboxAll = !flag
+      this.shapList.forEach((item, index) => {
+        item.isCheckbox = !flag
+      })
+      this.summoney()
+    },
+    summoney () {
+      this.sumMoney = 0
+      this.shapList.forEach((item, index) => {
+        if (item.isCheckbox) {
+          this.sumMoney += item.money
+        }
+      })
+    },
+    addData () {
+      this.shapList.push(this.shapAddData)
     }
   }
 }
@@ -147,5 +227,28 @@ export default {
   img{
     width: 100%;
     height: 100%;
+  }
+  .checkAll{
+    margin-top: 20px;
+    height: 100px;
+    width: 50px;
+    float: left;
+  }
+  .summoney{
+    float: left;
+    margin-left: 80px;
+    margin-top: 20px;
+  }
+  .shap-add{
+    width: 350px;
+    height: 20px;
+    text-align: right;
+  }
+  .shap-add-butn{
+    background-color: red;
+    color: cornsilk;
+    width: 80px;
+    height: 30px;
+    font-size: 16px;
   }
 </style>
