@@ -2,14 +2,13 @@
   <div class="hello">
     <img src="../assets/logo.png">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h2>Title</h2>
     <ul>
       <li>
         <a
-          href="https://vuejs.org"
-          target="_blank"
+          href="#/shap/"
         >
-          Core Docs
+          Myshap
         </a>
       </li>
       <li>
@@ -62,22 +61,6 @@
           target="_blank"
         >
           vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
         </a>
       </li>
     </ul>

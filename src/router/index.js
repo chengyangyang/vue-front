@@ -19,7 +19,7 @@ export default new Router({
     },
     {
       path: '/shap',
-      name: 'shao',
+      name: 'shap',
       component: shap
     }
   ]

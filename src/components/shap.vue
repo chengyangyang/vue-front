@@ -1,6 +1,9 @@
 <template>
     <div class="shap">
-      <div class="shap-head">我的购物车</div>
+      <div class="input-group input-group">
+        <span class="input-group-addon" id="sizing-addon1" style="line-height: 40px"><img src="../../static/images/find.png" height="20" width="20"/></span>
+        <input type="text" class="form-control" placeholder="搜索商品" aria-describedby="sizing-addon1">
+      </div>
       <div class="shap-add"><button class="shap-add-butn" @click = "addData ()">新增商品</button></div>
       <div class="shap-body" v-for="(item,index) in shapList" :key="index">
         <div class="shap-content">
@@ -161,23 +164,22 @@ export default {
 
 <style scoped>
   .shap{
-    background-color: azure;
     width: 350px;
     height: 500px;
     margin: auto;
   }
   .shap-head{
-    background-color: darkgray;
     width: 350px;
     height: 40px;
     line-height: 40px;
+    border-bottom: 1px solid black;
   }
   .shap-content{
-    background-color: antiquewhite;
+    background-color: white;
     width: 350px;
     height: 100px;
-    margin-top: 20px;
     position: relative;
+    border-top: 1px solid black ;
   }
   .shap-content-checkboxs{
     height: 100px;
@@ -253,8 +255,10 @@ export default {
   }
   .shap-add{
     width: 350px;
-    height: 20px;
+    height: 35px;
     text-align: right;
+    margin-bottom: 0px;
+    margin-top: 4px;
   }
   .shap-add-butn{
     background-color: red;
@@ -262,5 +266,6 @@ export default {
     width: 80px;
     height: 30px;
     font-size: 16px;
+    margin-bottom: 0px;
   }
 </style>
