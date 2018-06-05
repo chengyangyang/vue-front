@@ -16,6 +16,7 @@
   "dependencies": {
     "popper.js": "^1.14.3",
     "vue": "^2.5.2",
+    "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },

@@ -41,7 +41,6 @@
 </template>
 
 <script>
-import index from '../router'
 
 export default {
   name: 'shap',
@@ -49,48 +48,7 @@ export default {
     return {
       isCheckboxAll: false,
       sumMoney: 0,
-      shapList: [
-        { imgPath: '../../static/images/1511146983144371.jpg',
-          shapName: '一个美丽的图片',
-          shapType: '新物种1',
-          oneMoney: 1001,
-          money: 1001,
-          num: 1,
-          isCheckbox: false
-        },
-        { imgPath: '../../static/images/1511146983144371.jpg',
-          shapName: '天高任鸟飞',
-          shapType: '新物种2',
-          oneMoney: 1002,
-          money: 1002,
-          num: 1,
-          isCheckbox: false
-        },
-        { imgPath: '../../static/images/1511146983144371.jpg',
-          shapName: '海阔凭鱼跃',
-          shapType: '新物种3',
-          oneMoney: 1003,
-          money: 1003,
-          num: 1,
-          isCheckbox: false
-        },
-        { imgPath: '../../static/images/1511146983144371.jpg',
-          shapName: '难难难',
-          shapType: '新物种4',
-          oneMoney: 1004,
-          money: 1004,
-          num: 1,
-          isCheckbox: false
-        },
-        { imgPath: '../../static/images/1511146983144371.jpg',
-          shapName: '难于上青天',
-          shapType: '新物种5',
-          oneMoney: 1005,
-          money: 1005,
-          num: 1,
-          isCheckbox: false
-        }
-      ]
+      shapList: []
     }
   },
   filters: {
@@ -157,7 +115,20 @@ export default {
     removeshap (shap) {
       this.shapList.splice(shap, 1)
       this.summoney()
+    },
+    getLocalData () { // 请求本地数据
+      this.$http.get('../../static/data/shap.json').then(response => {
+        const content = response.data
+        if (content) {
+          this.shapList = content
+        }
+      }, response => {
+        alert('请求数据错误')
+      })
     }
+  },
+  mounted () {
+    this.getLocalData()
   }
 }
 </script>

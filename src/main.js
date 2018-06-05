@@ -6,7 +6,11 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap'
 import 'jquery/dist/jquery'
+import VueResource from 'vue-resource'
 Vue.config.productionTip = false
+
+/* 使用VueResource插件 */
+Vue.use(VueResource)
 
 /* eslint-disable no-new */
 new Vue({
