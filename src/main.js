@@ -7,8 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap'
 // import VueResource from 'vue-resource'
 import axios from 'axios'
+import store from './store'
 Vue.config.productionTip = false
-
 
 /* 使用VueResource插件 */
 // Vue.use(VueResource)
@@ -17,6 +17,7 @@ Vue.prototype.$http = axios
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
