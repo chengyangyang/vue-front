@@ -122,8 +122,8 @@ export default {
         if (content) {
           this.shapList = content
         }
-      }, response => {
-        alert('请求数据错误')
+      }).catch(eror => {
+        alert('数据请求错误')
       })
     }
   },
