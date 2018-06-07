@@ -8,8 +8,11 @@ import 'bootstrap/dist/js/bootstrap'
 // import VueResource from 'vue-resource'
 import axios from 'axios'
 import store from './store'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false
 
+Vue.use(ElementUI)
 /* 使用VueResource插件 */
 // Vue.use(VueResource)
 Vue.prototype.$http = axios

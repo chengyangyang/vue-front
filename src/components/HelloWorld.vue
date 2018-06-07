@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <img src="../assets/logo.png">
+    <el-button type="success">成功按钮</el-button>
     <h1>{{ msg }}</h1>
     <h2>Title</h2>
     <ul>
