@@ -13,7 +13,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
-/* 使用VueResource插件 */
+/*   使用VueResource插件 */
 // Vue.use(VueResource)
 Vue.prototype.$http = axios
 /* eslint-disable no-new */
