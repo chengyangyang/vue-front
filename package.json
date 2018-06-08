@@ -16,6 +16,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "element-ui": "^2.4.0",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
     "popper.js": "^1.14.3",
     "vue": "^2.5.2",
     "vue-resource": "^1.5.1",
