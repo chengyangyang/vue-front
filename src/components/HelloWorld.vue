@@ -65,6 +65,10 @@
         </a>
       </li>
     </ul>
+    <div>
+      <button @click="increment">+1</button>
+      <button @click="decrement">-1</button>
+    </div>
   </div>
 </template>
 
@@ -74,6 +78,27 @@ export default {
   data () {
     return {
       msg: '世界很精彩，vue很美丽！'
+    }
+  },
+  created:function () {
+    this.test();
+    // this.increment();
+    // this.decrement();
+  },
+  mounted:function () {
+
+  },
+  methods:{
+    test(){
+      // console.log(this.$store.getters.getTest);
+    },
+    increment(){
+      this.$store.dispatch("increment");
+      console.log(this.$store.getters.getTest);
+    },
+    decrement() {
+      this.$store.dispatch("decrement");
+      console.log(this.$store.getters.getTest);
     }
   }
 }
