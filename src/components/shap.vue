@@ -41,7 +41,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'shap',
   data: function () {
@@ -117,14 +116,10 @@ export default {
       this.summoney()
     },
     getLocalData () { // 请求本地数据
-      this.$http.get('../../static/data/shap.json').then(response => {
-        const content = response.data
-        if (content) {
-          this.shapList = content
-        }
-      }).catch(eror => {
-        alert('数据请求错误')
-      })
+         this.$get('../../static/data/shap.json').then((response) => {
+            console.log(response)
+            this.shapList = response
+          })
     }
   },
   mounted () {
