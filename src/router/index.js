@@ -1,26 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import Hello from '@/components/Hello'
-import shap from '@/components/shap'
+import header from '@/components/header'     //头部
+import footer from '@/components/footer'     //底部
+import common from '@/components/common'     //通用模块
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      path: '/',      //顶部导航
+      name: 'header',
+      component: header
     },
     {
-      path: '/Hello',
-      name: 'Hello',
-      component: Hello
+      path: '/footer',               //底部版权
+      name: 'footer',
+      component: footer
     },
     {
-      path: '/shap',
-      name: 'shap',
-      component: shap
+      path: '/common',               //通用模块
+      name: 'common',
+      component: common
     }
   ]
 })
