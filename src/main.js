@@ -11,8 +11,11 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/css/common.css'
-Vue.config.productionTip = false
+import service from './service/common'
 
+
+Vue.config.productionTip = false
+Vue.use(service)
 Vue.use(ElementUI)
 /*   使用VueResource插件 */
 // Vue.use(VueResource)
