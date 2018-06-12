@@ -117,13 +117,12 @@ export default {
     },
     getLocalData () { // 请求本地数据
          this.$get('../../static/data/shap.json').then((response) => {
-            console.log(response)
             this.shapList = response
           })
     }
   },
   mounted () {
-    this.getLocalData()
+    this.getLocalData();
   }
 }
 </script>
