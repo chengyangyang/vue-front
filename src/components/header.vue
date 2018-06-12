@@ -47,20 +47,20 @@
         <el-menu-item index="18">欧美剧</el-menu-item>
       </el-menu>
       <!--引入底部组件-->
-      <footer></footer>
+      <foot></foot>
     </div>
 </template>
 
 <script>
-import footer from "./footer.vue"
+import foot from "./footer.vue"
 export default {
   data () {
     return {
       activeIndex: '1'   //默认导航选中
     }
   },
-  comment:{
-    footer
+  components:{
+    foot
   },
   methods:{
     handleSelect(key, keyPath) {
