@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <router-view/>
     <!--顶部引入-->
     <headDiv></headDiv>
     <!--文本内容-->

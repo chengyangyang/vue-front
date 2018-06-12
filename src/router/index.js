@@ -5,6 +5,7 @@ import footer from '@/components/footer'     //底部
 import common from '@/components/common'     //通用模块
 import resourcesList from '@/components/resourcesList'     //通用模块
 import shap from '@/components/shap'
+import contentList from '@/components/contentList'
 Vue.use(Router)
 
 export default new Router({
@@ -34,5 +35,10 @@ export default new Router({
       name: 'shap',
       component: shap
     },
+    {
+      path: '/contentList',               //今日更新资源
+      name: 'contentList',
+      component: contentList
+    }
   ]
 })
