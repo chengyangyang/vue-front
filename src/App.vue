@@ -43,7 +43,7 @@
           </el-tabs>
         </div>
         <div class="articleRight updateMovie fr">
-          <resourcesDiv></resourcesDiv>
+          <resourcesDiv :resourceUrl = "resourceUrl"></resourcesDiv>
         </div>
 
       </div>
@@ -65,6 +65,7 @@ export default {
   data(){
     return{
       activeName:"second",
+      resourceUrl:{"url":"../../static/data/resourcesList1.json","isFirst":true,"updateNum":1,"fuTitle":'今日更新资源'},
       data:[{},{},{},{},{},{}]
     }
   },
@@ -113,7 +114,7 @@ export default {
     .articleRight{
       width: 300px;
       height: 610px;
-      overflow: hidden;
+      /*overflow: hidden;*/
     }
   }
   }

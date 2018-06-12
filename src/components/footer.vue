@@ -24,7 +24,7 @@ export default {
   text-align: center;
   border-top: 2px solid rgb(4,184,144);
   font-size: 12px;
-  margin: auto;
+  margin-top: 50px;
   .footerText{
     padding: 35px 10px;
   }

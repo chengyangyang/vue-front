@@ -29,7 +29,7 @@ export default {
 <style lang="less" scoped>
 .commonCell{
   float: left;
-  width: 147px;
+  width: 156px;
   padding: 5px 11px 5px 12px;
   height: 260px;
   overflow: hidden;

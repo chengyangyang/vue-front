@@ -1,12 +1,12 @@
 <template>
     <div class="box">
-      <div class="title" v-if="isFirst">
-        <b>{{fuTitle}}</b>
-        <span><i>{{updateNum}}</i>部更新</span>
+      <div class="title" v-if="this.resourceUrl.isFirst">
+        <b>{{this.resourceUrl.fuTitle}}</b>
+        <span><i>{{this.resourceUrl.updateNum}}</i>部更新</span>
       </div>
 
       <div class="title" v-else>
-        <b>{{fuTitle}}</b>
+        <b>{{this.resourceUrl.fuTitle}}</b>
         <a>更多>></a>
       </div>
 
@@ -26,7 +26,7 @@
     },
     methods:{
       getResource(){
-        this.$get(this.resourceUrl).then((response) => {
+        this.$get(this.resourceUrl.url).then((response) => {
           console.log(response)
           this.resources = response
         })
@@ -35,7 +35,7 @@
     mounted(){
       this.getResource();
     },
-    props:["resourceUrl","isFirst","updateNum","fuTitle"]
+    props:["resourceUrl"]
 
   }
 </script>
@@ -82,7 +82,7 @@
     }
   }
   .list{
-    padding: 5px 20px;
+    padding: 3px 20px;
     li{
       height: 42px;
       line-height: 42px;
