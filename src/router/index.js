@@ -10,7 +10,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',      //顶部导航
+      path: '/header',      //顶部导航
       name: 'header',
       component: header
     },

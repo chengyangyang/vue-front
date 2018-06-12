@@ -46,13 +46,10 @@
         <el-menu-item index="17">日韩剧</el-menu-item>
         <el-menu-item index="18">欧美剧</el-menu-item>
       </el-menu>
-      <!--引入底部组件-->
-      <foot></foot>
     </div>
 </template>
 
 <script>
-import foot from "./footer.vue"
 export default {
   data () {
     return {
@@ -60,7 +57,7 @@ export default {
     }
   },
   components:{
-    foot
+
   },
   methods:{
     handleSelect(key, keyPath) {
@@ -87,7 +84,7 @@ export default {
      }
       .headIntro{
         /*padding:0 30px;*/
-        margin:25px 100px 0 150px;
+        margin:25px 100px 0 65px;
         a{
           display: inline-block;
           text-decoration: none;
@@ -164,6 +161,9 @@ export default {
   height: 50px;
   line-height: 50px;
 }
+}
+.is-disabled{
+   border-left: 6px solid transparent;
 }
 /*.headBox {*/
   /*height: 100px;*/
