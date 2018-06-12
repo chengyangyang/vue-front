@@ -5,7 +5,7 @@
         <span><i>{{updateNum}}</i>部更新</span>
       </div>
       <ul class="list">
-        <li><a href="">《爱国者》</a><span>06-09</span></li>
+        <li v-for="(item,index) in resources" :key="index"><a href="">{{item.name}}</a><span>{{item.date}}</span></li>
       </ul>
     </div>
 </template>
@@ -15,8 +15,20 @@
     name: "resources-list",
     data(){
         return {
-          updateNum:0
+          updateNum:0,
+          resources:[]
         }
+    },
+    methods:{
+      getResource(){
+        this.$get('../../static/data/resourcesList1.json').then((response) => {
+          console.log(response)
+          this.resources = response
+        })
+      }
+    },
+    mounted(){
+      this.getResource();
     }
   }
 </script>
@@ -55,7 +67,7 @@
       height: 42px;
       line-height: 42px;
       span{
-        font-size: 12px;
+        font-size: 13px;
         color: #8B8B8B;
         float:right;
       }
@@ -63,6 +75,7 @@
         color: #525252;
         float: left;
         text-decoration-line: none;
+        font-size: 14px;
       }
       a:hover{
         color: #15CF87;
