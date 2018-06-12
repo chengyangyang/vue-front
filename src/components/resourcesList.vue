@@ -1,9 +1,15 @@
 <template>
     <div class="box">
-      <div class="title">
-        <b>今日更新资源</b>
+      <div class="title" v-if="isFirst">
+        <b>{{fuTitle}}</b>
         <span><i>{{updateNum}}</i>部更新</span>
       </div>
+
+      <div class="title" v-else>
+        <b>{{fuTitle}}</b>
+        <a>更多>></a>
+      </div>
+
       <ul class="list">
         <li v-for="(item,index) in resources" :key="index"><a href="">{{item.name}}</a><span>{{item.date}}</span></li>
       </ul>
@@ -15,13 +21,12 @@
     name: "resources-list",
     data(){
         return {
-          updateNum:0,
           resources:[]
         }
     },
     methods:{
       getResource(){
-        this.$get('../../static/data/resourcesList1.json').then((response) => {
+        this.$get(this.resourceUrl).then((response) => {
           console.log(response)
           this.resources = response
         })
@@ -29,7 +34,9 @@
     },
     mounted(){
       this.getResource();
-    }
+    },
+    props:["resourceUrl","isFirst","updateNum","fuTitle"]
+
   }
 </script>
 
@@ -42,6 +49,19 @@
   .title{
     height: 40px;
     line-height: 40px;
+    a{
+      color: #525252;
+      float: right;
+      text-decoration-line: none;
+      font-size: 14px;
+      padding-right: 14px;
+    }
+    a:hover{
+      color: #15CF87;
+      float: right;
+      text-decoration-line: none;
+      padding-right: 14px;
+    }
     b{
       border-left: 6px solid #16CF88;
       text-indent: 20px;
