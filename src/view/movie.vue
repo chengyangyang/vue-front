@@ -60,6 +60,17 @@
               <commonDiv></commonDiv>
               <commonDiv></commonDiv>
             </div>
+            <div class="block" style="border: 1px solid  #E6E6E6;background: rgb(255,255,255);padding: 15px;text-align: center">
+              <el-pagination
+                @size-change="handleSizeChange"
+                @current-change="handleCurrentChange"
+                :current-page="currentPage4"
+                :page-sizes="[100, 200, 300, 400]"
+                :page-size="100"
+                layout="total, sizes, prev, pager, next, jumper"
+                :total="400">
+              </el-pagination>
+            </div>
           </div>
        </div>
       <footDiv></footDiv>
@@ -74,6 +85,7 @@
   data () {
     return {
       name:"我是movie页面",
+      currentPage4: 4,
       clickIndex:0,
       titleType:["全部","动作片","喜剧片","爱情片","科幻片","恐怖片","剧情片","战争片","微电影"],
       titleArea:["全部","大陆","香港","大陆","香港","大陆","香港","大陆","香港","大陆","香港","大陆","香港"],
@@ -92,6 +104,12 @@
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
     },
     typeChange(index){
       this.clickIndex = index;
