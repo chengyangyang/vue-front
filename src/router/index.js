@@ -44,12 +44,12 @@ export default new Router({
       component: contentList
     },
     {
-      path: '/index',      //首页
+      path: '/',      //首页
       name: 'index',
       component:index
     },
     {
-      path: '/',      //电影
+      path: '/movie',      //电影
       name: 'movie',
       component:movie
     }
