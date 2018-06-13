@@ -27,7 +27,7 @@
       </div>
       <!--顶部导航-->
       <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#545c64" text-color="#fff"  active-text-color="#15CF87">
-        <el-menu-item index="1"><a href="#">首页</a></el-menu-item>
+        <el-menu-item index="1"><a href="/">首页</a></el-menu-item>
         <el-menu-item index="2"><router-link to="/movie">电影</router-link></el-menu-item>
         <el-menu-item index="3"><router-link to="/shap">电视剧</router-link></el-menu-item>
         <el-menu-item index="4"><a href="#">综艺</a></el-menu-item>

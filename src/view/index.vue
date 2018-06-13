@@ -63,7 +63,7 @@
 <script>
 import headDiv from '@/components/header'     //头部
 import footDiv from '@/components/footer'     //底部
-import commonDiv from '@/components/common'     //电影模块
+import commonDiv from '@/components/commonIndex'     //电影模块
 import resourcesDiv from '@/components/resourcesList'
 import contentListDiv from '@/components/contentList'
 export default {

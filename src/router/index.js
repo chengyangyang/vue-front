@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import header from '@/components/header'     //头部
 import footer from '@/components/footer'     //底部
 import common from '@/components/common'     //通用模块
+import commonIndex from '@/components/commonIndex'     //通用模块
 import resourcesList from '@/components/resourcesList'     //通用模块
 import shap from '@/components/shap'
 import contentList from '@/components/contentList'
@@ -27,6 +28,11 @@ export default new Router({
       path: '/common',               //通用模块
       name: 'common',
       component: common
+    },
+    {
+      path: '/commonIndex',               //通用模块
+      name: 'commonIndex',
+      component: commonIndex
     },
     {
       path: '/resourcesList',               //今日更新资源
