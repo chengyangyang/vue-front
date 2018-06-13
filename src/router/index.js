@@ -6,9 +6,12 @@ import common from '@/components/common'     //通用模块
 import resourcesList from '@/components/resourcesList'     //通用模块
 import shap from '@/components/shap'
 import contentList from '@/components/contentList'
+import index from '@/view/index'
+import movie from '@/view/movie'
 Vue.use(Router)
 
 export default new Router({
+  mode:"history",
   routes: [
     {
       path: '/header',      //顶部导航
@@ -39,6 +42,16 @@ export default new Router({
       path: '/contentList',               //今日更新资源
       name: 'contentList',
       component: contentList
+    },
+    {
+      path: '/index',      //首页
+      name: 'index',
+      component:index
+    },
+    {
+      path: '/',      //电影
+      name: 'movie',
+      component:movie
     }
   ]
 })
