@@ -106,7 +106,7 @@
   .movieContent{
     margin-top: 25px;
     .leftBar{
-      width: 178px;
+      width: 185px;
       height: 300px;
       border: 1px solid #E6E6E6;
       background: rgb(255,255,255);
