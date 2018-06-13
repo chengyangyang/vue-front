@@ -48,8 +48,13 @@
         </div>
 
       </div>
-      <div class="section2">
-
+      <div class="section2 clearFix">
+        <div class="articleLeft fl">
+          <contentList :resourceUrl = "resourceUrlContent"></contentList>
+        </div>
+        <div class="articleRight fr">
+          <resourcesDiv :resourceUrl = "resourceUrl"></resourcesDiv>
+        </div>
       </div>
     </div>
     <footDiv></footDiv>
@@ -61,12 +66,15 @@ import headDiv from '@/components/header'     //头部
 import footDiv from '@/components/footer'     //底部
 import commonDiv from '@/components/common'     //电影模块
 import resourcesDiv from '@/components/resourcesList'
+import contentList from '@/components/contentList'
 export default {
   name: 'App',
   data(){
     return{
       activeName:"second",
-      resourceUrl:{"url":"../../static/data/resourcesList1.json","isFirst":true,"updateNum":1,"fuTitle":'今日更新资源'},
+      resourceUrl:{"url":"../../static/data/resourcesList1.json","isFirst":true,"updateNum":1,"fuTitle":"今日更新资源"},
+      resourceUrlContent:{"url":"../../static/data/contentList1.json","fuTitle":"2017年最新电影"},
+
       data:[{},{},{},{},{},{}]
     }
   },
@@ -74,7 +82,8 @@ export default {
     headDiv,
     footDiv,
     commonDiv,
-    resourcesDiv
+    resourcesDiv,
+    contentList
   },
   methods:{
     handleClick(tab, event) {
@@ -117,6 +126,10 @@ export default {
       height: 610px;
       /*overflow: hidden;*/
     }
+  }
+  .section2{
+    /*float: left;*/
+    margin-top: 20px;
   }
   }
   /*margin-top: 60px;*/

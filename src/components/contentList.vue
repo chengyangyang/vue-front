@@ -1,12 +1,11 @@
 <template>
   <div class="box">
     <div class="title">
-      <span>2017年电影推荐</span><a>更多>></a>
+      <span>{{this.resourceUrl.fuTitle}}</span><a>更多>></a>
     </div>
     <ul class="list">
-      <li>
-        <div class="li-left libox"><a href="">美国喜剧片《你好中世纪》</a><i>06-12</i></div>
-        <div class="li-right libox"><a href="">美国喜剧片《你好中世纪》</a><i>06-12</i></div>
+      <li  v-for="(item,index) in resources" :key="index">
+        <a href="">{{item.name}}</a><i>{{item.date}}</i>
       </li>
     </ul>
   </div>
@@ -14,13 +13,28 @@
 
 <script>
   export default {
-
+    data(){
+      return{
+        resources:[]
+      }
+    },
+    methods:{
+      getResources(){
+        this.$get(this.resourceUrl.url).then(response=>{
+          this.resources = response
+        })
+      }
+    },
+    mounted(){
+      this.getResources()
+    },
+    props:["resourceUrl"]
   }
 </script>
 
 <style lang="less" scoped>
 .box{
-  margin: 20px auto;
+  margin: 0px auto;
   width: 785px;
   height: 610px;
   overflow: hidden;
@@ -47,38 +61,37 @@
     }
   }
   .list{
-    padding: 5px 20px;
+    padding: 5px 0px;
     clear: both;
     li{
       height: 42px;
-      .li-left{
-        padding-right: 35px;
-        float: left;
+      float: left;
+      width: 50%;
+      padding-left: 25px;
+      padding-right: 25px;
+      line-height: 42px;
+      a{
+        font-size: 15px;
+        color: #525252;
+        text-decoration: none;
+        width: 85%;
+        display: inline-block;
+        height: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
       }
-      .li-right{
-        padding-left: 35px;
+      a:hover{
+        color: #15CF87;
+      }
+      i{
+        font-style: normal;
+        font-size: 12px;
+        color: #8B8B8B;
+        text-decoration: none;
         float: right;
       }
-      .libox{
-        width: 371px;
-        line-height: 42px;
-        color: #525252;
-        i{
-          font-style: normal;
-          font-size: 12px;
-          color: #8B8B8B;
-          text-decoration: none;
-          float: right;
-        }
-        a{
-          font-size: 15px;
-          color: #525252;
-          text-decoration: none;
-        }
-        a:hover{
-          color: #15CF87;
-        }
-      }
+
     }
   }
 }

@@ -27,7 +27,6 @@
     methods:{
       getResource(){
         this.$get(this.resourceUrl.url).then((response) => {
-          console.log(response)
           this.resources = response
         })
       }
