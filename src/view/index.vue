@@ -47,8 +47,13 @@
         </div>
 
       </div>
-      <div class="section2">
-
+      <div class="section2 clearFix">
+        <div class="articleLeft fl">
+          <contentListDiv :resourceUrl = "contentUrl"></contentListDiv>
+        </div>
+        <div class="articleRight fr">
+          <resourcesDiv :resourceUrl = "resourceUrl"></resourcesDiv>
+        </div>
       </div>
     </div>
     <footDiv></footDiv>
@@ -60,11 +65,13 @@ import headDiv from '@/components/header'     //头部
 import footDiv from '@/components/footer'     //底部
 import commonDiv from '@/components/common'     //电影模块
 import resourcesDiv from '@/components/resourcesList'
+import contentListDiv from '@/components/contentList'
 export default {
   name:"indexPage",
   data(){
     return{
       activeName:"second",
+      contentUrl:{"url":"../../static/data/contentList1.json","fuTitle":'2017年最佳影片'},
       resourceUrl:{"url":"../../static/data/resourcesList1.json","isFirst":true,"updateNum":1,"fuTitle":'今日更新资源'},
       data:[{},{},{},{},{},{}]
     }
@@ -73,7 +80,8 @@ export default {
     headDiv,
     footDiv,
     commonDiv,
-    resourcesDiv
+    resourcesDiv,
+    contentListDiv
   },
   methods:{
     handleClick(tab, event) {
@@ -116,6 +124,9 @@ export default {
       height: 610px;
       /*overflow: hidden;*/
     }
+  }
+  .section2{
+    margin-top: 30px;
   }
   }
   /*margin-top: 60px;*/
