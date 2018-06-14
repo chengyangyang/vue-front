@@ -6,6 +6,8 @@ import tabBar from '@/components/tabBar'     //底部
 import common from '@/components/common'     //通用模块
 import commonIndex from '@/components/commonIndex'     //通用模块
 import resourcesList from '@/components/resourcesList'     //通用模块
+import leftBar from '@/components/leftBar'
+import pageNation from '@/components/pageNation'
 import shap from '@/components/shap'
 import contentList from '@/components/contentList'
 import carousel from '@/components/carousel'
@@ -17,7 +19,12 @@ export default new Router({
   mode:"history",
   routes: [
     {
-      path: '/tabBar',      //顶部导航
+      path: '/leftBar',
+      name: 'leftBar',
+      component: leftBar
+    },
+    {
+      path: '/tabBar',
       name: 'tabBar',
       component: tabBar
     },
@@ -25,6 +32,11 @@ export default new Router({
       path: '/header',      //顶部导航
       name: 'header',
       component: header
+    },
+    {
+      path:'/pageNation',
+      name:pageNation,
+      component:pageNation
     },
     {
       path: '/footer',               //底部版权
