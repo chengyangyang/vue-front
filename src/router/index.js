@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import header from '@/components/header'     //头部
 import footer from '@/components/footer'     //底部
+import tabBar from '@/components/tabBar'     //底部
 import common from '@/components/common'     //通用模块
 import commonIndex from '@/components/commonIndex'     //通用模块
 import resourcesList from '@/components/resourcesList'     //通用模块
@@ -14,6 +15,11 @@ Vue.use(Router)
 export default new Router({
   mode:"history",
   routes: [
+    {
+      path: '/tabBar',      //顶部导航
+      name: 'tabBar',
+      component: tabBar
+    },
     {
       path: '/header',      //顶部导航
       name: 'header',
