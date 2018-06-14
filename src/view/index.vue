@@ -13,16 +13,7 @@
             <el-tab-pane label="精品电影推荐" name="first" disabled>精品电影推荐</el-tab-pane>
             <el-tab-pane label="电影" name="second">
               <div class="cellBox">
-                <commonDiv></commonDiv>
-                <commonDiv></commonDiv>
-                <commonDiv></commonDiv>
-                <commonDiv></commonDiv>
-                <commonDiv></commonDiv>
-                <commonDiv></commonDiv>
-                <commonDiv></commonDiv>
-                <commonDiv></commonDiv>
-                <commonDiv></commonDiv>
-                <commonDiv></commonDiv>
+                <commonDiv :resourceUrl="moviePage"></commonDiv>
               </div>
             </el-tab-pane>
             <el-tab-pane label="电视剧" name="third">
@@ -73,6 +64,7 @@ export default {
       activeName:"second",
       contentUrl:{"url":"../../static/data/contentList1.json","fuTitle":'2017年最佳影片'},
       resourceUrl:{"url":"../../static/data/resourcesList1.json","isFirst":true,"updateNum":1,"fuTitle":'今日更新资源'},
+      moviePage:{"url":"../../static/data/comMovie.json"},
       data:[{},{},{},{},{},{}]
     }
   },
