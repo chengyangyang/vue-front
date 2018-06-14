@@ -8,6 +8,7 @@ import commonIndex from '@/components/commonIndex'     //通用模块
 import resourcesList from '@/components/resourcesList'     //通用模块
 import shap from '@/components/shap'
 import contentList from '@/components/contentList'
+import carousel from '@/components/carousel'
 import index from '@/view/index'
 import movie from '@/view/movie'
 Vue.use(Router)
@@ -64,6 +65,11 @@ export default new Router({
       path: '/movie',      //电影
       name: 'movie',
       component:movie
+    },
+    {
+      path: '/carousel',      //电影
+      name: 'carousel',
+      component:carousel
     }
   ]
 })
