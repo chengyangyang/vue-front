@@ -158,6 +158,7 @@ export default {
 }
 /*导航栏菜单*/
 .el-menu-demo{
+  padding: 0 30px;
   height: 52px;
 .el-menu-item{
   height: 50px;
