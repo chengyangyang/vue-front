@@ -12,6 +12,7 @@ import shap from '@/components/shap'
 import contentList from '@/components/contentList'
 import index from '@/view/index'
 import movie from '@/view/movie'
+import movieDetail from '@/view/movieDetail'
 Vue.use(Router)
 
 export default new Router({
@@ -76,6 +77,11 @@ export default new Router({
       path: '/movie',      //电影
       name: 'movie',
       component:movie
+    },
+    {
+      path: '/movieDetail',      //电影
+      name: 'movieDetail',
+      component:movieDetail
     }
   ]
 })
