@@ -1,6 +1,5 @@
 <template>
     <div id="movieDetail">
-       <headDiv></headDiv>
       <div class="detailContent container clearFix">
         <div class="leftBar fl">
           <leftBar></leftBar>
@@ -9,7 +8,7 @@
           <div class="movieIntro">
               <div class= "introCon clearFix">
                 <div class="movieImg fl">
-                  <img src="../../static/images/common2.jpg" alt="">
+                  <img src="../../../static/images/common2.jpg" alt="">
                 </div>
                 <div class="movieAll fl">
                     <h4>大内特工队</h4>
@@ -68,14 +67,10 @@
           </div>
         </div>
       </div>
-
-      <footDiv></footDiv>
     </div>
 </template>
 
 <script>
-  import headDiv from '@/components/header'     //头部
-  import footDiv from '@/components/footer'     //底部
   import leftBar from '@/components/leftBar'
   import commonDiv from '@/components/common'     //电影模块
   export default {
@@ -95,9 +90,10 @@
       moviePage:{"url":"../../static/data/comMovie.json"}
     }
   },
+  mounted(){
+    console.log(this.$route.path);
+  },
   components:{
-    headDiv,
-    footDiv,
     leftBar,
     commonDiv
   },
