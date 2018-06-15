@@ -1,6 +1,5 @@
 <template>
-    <div id="movie">
-       <headDiv></headDiv>
+  <div id="movie">
        <div class="movieContent container clearFix">
           <div class="leftBar fl">
             <leftBar></leftBar>
@@ -17,13 +16,10 @@
             </div>
           </div>
        </div>
-      <footDiv></footDiv>
-    </div>
+  </div>
 </template>
 
 <script>
-  import headDiv from '@/components/header'     //头部
-  import footDiv from '@/components/footer'     //底部
   import leftBar from '@/components/leftBar'
   import tabBar from '@/components/tabBar'
   import commonDiv from '@/components/common'     //电影模块
@@ -37,8 +33,6 @@
     }
   },
   components:{
-    headDiv,
-    footDiv,
     tabBar,
     leftBar,
     commonDiv,
@@ -46,7 +40,7 @@
   },
   methods: {
     movieCall(){
-      this.$router.push({"name":"movieDetail"});
+      this.$router.push("/movieDetail");
     }
   }
 }

@@ -1,7 +1,5 @@
 <template>
   <div id="indexPage">
-    <!--顶部引入-->
-    <headDiv></headDiv>
     <!--文本内容-->
     <div class="indexContent container">
       <p class="prompt"><span>公共：</span>防止网站域名失效，请加我们微信公众号“一一影院”请网友收藏！很好记！感谢各位网友的支持！</p>
@@ -47,13 +45,10 @@
         </div>
       </div>
     </div>
-    <footDiv></footDiv>
   </div>
 </template>
 
 <script>
-import headDiv from '@/components/header'     //头部
-import footDiv from '@/components/footer'     //底部
 import commonDiv from '@/components/commonIndex'     //电影模块
 import resourcesDiv from '@/components/resourcesList'
 import contentListDiv from '@/components/contentList'
@@ -69,8 +64,6 @@ export default {
     }
   },
   components:{
-    headDiv,
-    footDiv,
     commonDiv,
     resourcesDiv,
     contentListDiv
