@@ -46,10 +46,15 @@
         <el-menu-item index="17">日韩剧</el-menu-item>
         <!--<el-menu-item index="18">欧美剧</el-menu-item>-->
       </el-menu>
+      <!--<keep-alive>-->
+        <router-view/>
+      <!--</keep-alive>-->
+      <footDiv></footDiv>
     </div>
 </template>
 
 <script>
+  import footDiv from '@/components/footer'     //底部
 export default {
   data () {
     return {
@@ -57,7 +62,7 @@ export default {
     }
   },
   components:{
-
+    footDiv
   },
   methods:{
     handleSelect(key, keyPath) {
@@ -163,6 +168,11 @@ export default {
 .el-menu-item{
   height: 50px;
   line-height: 50px;
+  a{
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 }
 }
 .is-disabled{
