@@ -10,14 +10,7 @@
               <tabBar></tabBar>
             </div>
             <div class="movieType clearFix">
-              <commonDiv></commonDiv>
-              <commonDiv></commonDiv>
-              <commonDiv></commonDiv>
-              <commonDiv></commonDiv>
-              <commonDiv></commonDiv>
-              <commonDiv></commonDiv>
-              <commonDiv></commonDiv>
-              <commonDiv></commonDiv>
+              <commonDiv :resourceUrl = "moviePage" v-on:headCallBack="movieCall"></commonDiv>
             </div>
             <div class="pageNation">
               <pageNation></pageNation>
@@ -39,7 +32,8 @@
   data () {
     return {
       name:"我是movie页面",
-      currentPage4: 4
+      currentPage4: 4,
+      moviePage:{"url":"../../static/data/comMovie.json"}
     }
   },
   components:{
@@ -51,6 +45,9 @@
     pageNation
   },
   methods: {
+    movieCall(){
+      this.$router.push({"name":"movieDetail"});
+    }
   }
 }
 </script>

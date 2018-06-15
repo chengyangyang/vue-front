@@ -1,20 +1,20 @@
 <template>
     <div id="common">
-        <div class="commonCell">
-          <div class="cellTop">
-            <a href="">
-              <img src="../../static/images/common1.jpg" alt="">
-              <span class="clearFix">
-                <em class="fl">科幻片</em>
-                <i class="fr">5.1</i>
+      <div class="commonCell" v-for="(item,index) in resources" :key="index" @click="comeDetail(index)">
+        <div class="cellTop">
+          <a>
+            <img :src="item.url" alt="">
+            <span class="clearFix">
+                <em class="fl">{{item.movieType}}</em>
+                <i class="fr">{{item.movieLevel}}</i>
               </span>
-            </a>
-          </div>
-          <div class="cellTitle">
-            <p class="movieName">TS抢先版《游侠索罗》</p>
-            <p class="movieType">科幻片-美国电影</p>
-          </div>
+          </a>
         </div>
+        <div class="cellTitle">
+          <p class="movieName">{{item.movieName}}}</p>
+          <p class="movieType">{{item.movieArea}}</p>
+        </div>
+      </div>
     </div>
 </template>
 
@@ -22,6 +22,21 @@
 export default {
   data () {
     return {
+      resources:[]
+    }
+  },
+  props:["resourceUrl"],
+  mounted(){
+    this.getResource();
+  },
+  methods:{
+    getResource(){
+      this.$get(this.resourceUrl.url).then((response) => {
+        this.resources = response
+      })
+    },
+    comeDetail(index){
+      this.$emit('headCallBack');
     }
   }
 }
