@@ -13,6 +13,7 @@ import contentList from '@/components/contentList'
 import carousel from '@/components/carousel'
 import index from '@/view/index'
 import movie from '@/view/movie'
+import movieDetail from '@/view/movieDetail'
 Vue.use(Router)
 
 export default new Router({
@@ -79,7 +80,12 @@ export default new Router({
       component:movie
     },
     {
-      path: '/carousel',      //电影
+      path:'/movieDetail',
+      name:'movieDetail',
+      component:movieDetail
+    },
+    {
+      path: '/carousel',
       name: 'carousel',
       component:carousel
     }

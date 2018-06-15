@@ -11,7 +11,7 @@
             </a>
           </div>
           <div class="cellTitle">
-            <p class="movieName">{{item.movieName}}}</p>
+            <p class="movieName">{{item.movieName}}</p>
             <p class="movieType">{{item.movieArea}}</p>
           </div>
         </div>
