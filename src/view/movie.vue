@@ -12,7 +12,7 @@
               <commonDiv :resourceUrl = "moviePage" v-on:headCallBack="movieCall"></commonDiv>
             </div>
             <div class="pageNation">
-              <pageNation></pageNation>
+              <pageNation @current-page="currentPage" @page-size="pageSize"></pageNation>
             </div>
           </div>
        </div>
@@ -41,7 +41,13 @@
   methods: {
     movieCall(){
       this.$router.push("/movieDetail");
-    }
+    },
+    pageSize(currentSect){
+      alert(currentSect)
+    },
+    currentPage(currentSect){
+      alert(currentSect)
+    },
   }
 }
 </script>
