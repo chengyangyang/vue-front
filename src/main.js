@@ -21,6 +21,8 @@ Vue.prototype.$patch=patch;
 Vue.prototype.$put=put;
 
 Vue.config.productionTip = false
+Vue.config.silent = true// 去除不必要的警告
+Vue.config.devtools = true// 是否允许检查代码
 //Vue.use(service)
 Vue.use(ElementUI)
 /*   使用VueResource插件 */
