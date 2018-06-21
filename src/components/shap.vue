@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import {comData} from '../service/server'
 export default {
   name: 'shap',
   data: function () {
@@ -116,9 +117,16 @@ export default {
       this.summoney()
     },
     getLocalData () { // 请求本地数据
-         this.$get('../../static/data/shap.json').then((response) => {
-            this.shapList = response
-          })
+      var _this = this;
+      comData().then(function (data) {
+        _this.shapList = data;
+      }).catch(function (err) {
+          console.log(err);
+        }
+      );
+         // this.$get('../../static/data/shap.json').then((response) => {
+         //    this.shapList = response
+         //  })
     }
   },
   mounted () {
