@@ -12,7 +12,8 @@
               <commonDiv :resourceUrl = "moviePage" v-on:headCallBack="movieCall"></commonDiv>
             </div>
             <div class="pageNation">
-              <pageNation @current-page="currentPage" @page-size="pageSize"></pageNation>
+              <pageNation  ref="mychild" @current-page="currentPage" @page-size="pageSize"></pageNation>
+              <button @click="clickParent">点击</button><!--父组件调用子组件方法-->
             </div>
           </div>
        </div>
@@ -41,6 +42,9 @@
   methods: {
     movieCall(){
       this.$router.push("/movieDetail");
+    },
+    clickParent() {
+      this.$refs.mychild.parentHandleclick("嘿嘿嘿");
     },
     pageSize(currentSect){
       alert(currentSect)

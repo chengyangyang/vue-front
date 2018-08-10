@@ -29,7 +29,11 @@ export default {
     handleCurrentChange(val) {
       console.log(`当前页: ${val}`);
       this.$emit('current-page',val)
+    },
+    parentHandleclick(e) {
+      console.log(e)
     }
+
   }
 }
 </script>
