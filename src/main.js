@@ -29,6 +29,7 @@ Vue.use(ElementUI)
 // Vue.use(VueResource)
 //Vue.prototype.$http = axios
 /* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,

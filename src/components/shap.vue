@@ -38,10 +38,15 @@
         <div class="summoney">总价：{{sumMoney | moneyFormat }}</div>
       </div>
     </div>
+
 </template>
 
+
+
+
+
 <script>
-import {comData} from '../service/server'
+import {comData,databb} from '../service/server'
 export default {
   name: 'shap',
   data: function () {
@@ -130,6 +135,8 @@ export default {
     }
   },
   mounted () {
+
+    databb()
     this.getLocalData();
   }
 }
