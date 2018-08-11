@@ -2,8 +2,10 @@
     <div class="shap">
       <div>
         <div>
-          <a href="#" @click = "$store.commit('increment')"> vuex mutations 点击增加</a>{{$store.state.dialog.count}}====={{$store.state.other.count}}</div>
+         <a href="#" @click = "$store.commit('increment')"> vuex mutations 点击增加</a>{{$store.state.dialog.count}}====={{$store.state.other.count}}
+        </div>
         <a href="#" @click = "$store.dispatch('increment')"> vuex action 点击增加</a>{{$store.getters.getTest}}
+        <a href="#" @click = "$store.dispatch('increment')"> vuex Mapstate 点击获取</a>{{count}}
       </div>
 
 
@@ -54,6 +56,7 @@
 
 
 <script>
+  import { mapState } from 'vuex'
 import {comData,databb} from '../service/server'
 export default {
   name: 'shap',
@@ -144,6 +147,10 @@ export default {
   },
   mounted () {
     this.getLocalData();
+  },
+  computed:{
+    ...mapState({count:state =>state.other.count})
+    //...mapState({aaaaa:'count'}) 若vuex中没有使用模块化,可用这个来获取状态
   }
 }
 </script>
