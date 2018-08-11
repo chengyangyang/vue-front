@@ -3,7 +3,7 @@ export default {
   state: {
     show: false,
     testList:['消消',"乐乐","憨憨"],
-    count:1
+    count:4
   },
   //提供存储设置state数据的方法
   mutations: {
@@ -35,11 +35,5 @@ export default {
   },
   //提供用来获取state数据的方法
   getters: {
-    not_show (state) { // 这里的state对应着上面这个state
-      return !state.show
-    },
-    getTest(state){
-      return state.count;
-    }
   }
 }

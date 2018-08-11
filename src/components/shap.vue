@@ -1,5 +1,13 @@
 <template>
     <div class="shap">
+      <div>
+        <div>
+          <a href="#" @click = "$store.commit('increment')"> vuex mutations 点击增加</a>{{$store.state.dialog.count}}====={{$store.state.other.count}}</div>
+        <a href="#" @click = "$store.dispatch('increment')"> vuex action 点击增加</a>{{$store.getters.getTest}}
+      </div>
+
+
+
       <div class="input-group input-group">
         <span class="input-group-addon" id="sizing-addon1" style="line-height: 40px"><img src="../../static/images/find.png" height="20" width="20"/></span>
         <input type="text" class="form-control" placeholder="搜索商品" aria-describedby="sizing-addon1">
@@ -129,14 +137,12 @@ export default {
           console.log(err);
         }
       );
-         // this.$get('../../static/data/shap.json').then((response) => {
-         //    this.shapList = response
-         //  })
+      this.$get('../../static/data/shap.json').then((response) => {
+        this.shapList = response
+      })
     }
   },
   mounted () {
-
-    databb()
     this.getLocalData();
   }
 }
