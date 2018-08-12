@@ -2,10 +2,12 @@
     <div class="shap">
       <div>
         <div>
-         <a href="#" @click = "$store.commit('increment')"> vuex mutations 点击增加</a>{{$store.state.dialog.count}}====={{$store.state.other.count}}
+         <a href="#" @click = "$store.commit('dialog/increment',10)"> vuex mutations 点击增加</a>{{$store.state.dialog.count}}====={{$store.state.other.count}}
         </div>
-        <a href="#" @click = "$store.dispatch('increment')"> vuex action 点击增加</a>{{$store.getters.getTest}}
-        <a href="#" @click = "$store.dispatch('increment')"> vuex Mapstate 点击获取</a>{{count}}
+        <a href="#" @click = "$store.dispatch('other/increment')"> vuex action 点击增加</a>{{$store.getters['dialog/getTest']}}
+        <a href="#" @click = "$store.dispatch('other/increment')"> vuex Mapstate 点击获取</a>{{count}}
+        <h6>获得Mapgetters中的值{{getTest}}</h6>
+        <h6></h6>
       </div>
 
 
@@ -56,7 +58,7 @@
 
 
 <script>
-  import { mapState } from 'vuex'
+  import { mapState,mapGetters } from 'vuex'
 import {comData,databb} from '../service/server'
 export default {
   name: 'shap',
@@ -149,8 +151,16 @@ export default {
     this.getLocalData();
   },
   computed:{
-    ...mapState({count:state =>state.other.count})
+    ...mapState({count:state =>state.other.count}),
     //...mapState({aaaaa:'count'}) 若vuex中没有使用模块化,可用这个来获取状态
+    // 使用对象展开运算符将 getter 混入 computed 对象中
+    ...mapGetters({
+        getTest:'dialog/getTest',
+        getParamer:'dialog/getParamer',
+    }
+
+
+    )
   }
 }
 </script>

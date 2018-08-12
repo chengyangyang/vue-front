@@ -1,5 +1,8 @@
+
+import { increment } from './mutation-types'
 export default {
   //类似于存储全局变量的数据
+  namespaced:true,
   state: {
     show: false,
     testList:['消消',"乐乐","憨憨"],
@@ -12,8 +15,9 @@ export default {
       // 你还可以在这里执行其他的操作改变state
     },
     // 加1
-    increment(state) {
-      state.count++;
+    [increment](state,param) {//第二个数可以作为参数传递
+      state.count += param;
+
     },
     // 减1
     decrement(state) {
@@ -26,7 +30,7 @@ export default {
       context.commit('switch_dialog')
       // 你还可以在这里触发其他的mutations方法
     },
-    increment(context) {
+    increment(context) {//第二个参数可以当做参数传递
       context.commit("increment");
     },
     decrement(context) {
@@ -38,8 +42,11 @@ export default {
     not_show (state) { // 这里的state对应着上面这个state
       return !state.show
     },
-    getTest(state){
-      return state.count;
+    getTest(state,getters){//这里也可以添加第二参数,getters中的方法
+      return state.count +"=="+ getters.not_show;
+    },
+    getParamer:(state,getters) =>(id) =>{//也可以通过传递参数
+      return state.count +"=="+ getters.not_show +"===="+id;
     }
   }
 }

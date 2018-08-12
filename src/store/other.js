@@ -1,5 +1,6 @@
 export default {
   //类似于存储全局变量的数据
+  namespaced:true,
   state: {
     show: false,
     testList:['消消',"乐乐","憨憨"],
@@ -27,7 +28,7 @@ export default {
       // 你还可以在这里触发其他的mutations方法
     },
     increment(context) {
-      context.commit("increment");
+      return context.commit("increment");
     },
     decrement(context) {
       context.commit("decrement");
