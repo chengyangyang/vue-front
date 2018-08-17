@@ -58,7 +58,7 @@
 export default {
   data () {
     return {
-      activeIndex: '/index'   //默认导航选中
+      activeIndex: this.$route.path   //默认导航选中
     }
   },
   components:{
@@ -72,8 +72,7 @@ export default {
     }
   },
   mounted(){
-    console.log(this.$route.path)
-    this.activeIndex = this.$route.path;
+
   }
 }
 </script>
