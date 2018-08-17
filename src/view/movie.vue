@@ -2,8 +2,8 @@
   <div id="movie">
     <div>
       <div>
-        <a href="#" @click = "$store.commit('increment')"> vuex mutations 点击增加</a>{{$store.state.dialog.count}}====={{$store.state.other.count}}</div>
-      <a href="#" @click = "$store.dispatch('increment')"> vuex action 点击增加</a>{{$store.getters.getTest}}
+        <a href="#" @click = "$store.commit('dialog/increment')"> vuex mutations 点击增加</a>{{$store.state.dialog.count}}====={{$store.state.other.count}}</div>
+      <a href="#" @click = "$store.dispatch('dialog/increment')"> vuex action 点击增加</a>{{$store.getters.getTest}}
     </div>
 
        <div class="movieContent container clearFix">
