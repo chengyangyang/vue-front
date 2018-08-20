@@ -14,6 +14,11 @@ import './assets/css/common.css'
 import {post,get,patch,put} from './service/http'
 //import service from './service/common'
 
+/*富文本框start*/
+import VueQuillEditor from 'vue-quill-editor'
+Vue.use(VueQuillEditor)
+/*富文本框end*/
+
 //定义全局变量
 Vue.prototype.$post=post;
 Vue.prototype.$get=get;

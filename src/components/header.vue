@@ -43,7 +43,7 @@
         <el-menu-item index="14">战争片</el-menu-item>
         <el-menu-item index="15">国产剧</el-menu-item>
         <el-menu-item index="16">港台剧</el-menu-item>
-        <el-menu-item index="17">日韩剧</el-menu-item>
+        <el-menu-item index="/mytest"><router-link to="/mytest">我的测试</router-link></el-menu-item>
         <!--<el-menu-item index="18">欧美剧</el-menu-item>-->
       </el-menu>
       <!--<keep-alive>-->

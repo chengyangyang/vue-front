@@ -6,6 +6,7 @@ const index = r => require.ensure([], () => r(require('@/view/index')), 'index')
 const movie = r => require.ensure([], () => r(require('@/view/movie')), 'movie');
 const movieDetail = r => require.ensure([], () => r(require('@/view/children/movieDetail')), 'movieDetail');
 const shap = r => require.ensure([], () => r(require('@/components/shap')), 'shap');
+const mytest = r => require.ensure([], () => r(require('@/view/mytest')), 'mytest');
 // import index from '@/view/index'
 // import movie from '@/view/movie'
 // import movieDetail from '@/view/children/movieDetail'
@@ -35,6 +36,11 @@ export default new Router({
           path:'/movieDetail', //电影详情页
           name:'movieDetail',
           component:movieDetail
+        },
+        {
+          path:'/mytest', //我的个人测试
+          name:'mytest',
+          component:mytest
         }
       ]
     },
