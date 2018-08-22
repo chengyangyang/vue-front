@@ -3,6 +3,8 @@ import Mock from 'mockjs/dist/mock'
 
 export const comData = data =>get("../static/data/shap.json",data);      //shap购物车
 
+//http://www.bejson.com/knownjson/webInterface/
+export const cross = () => post("/api/mytest/getPerson.action");
 
 export const databb = Mock.mock({
   // 属性 list 的值是一个数组，其中含有 1 到 10 个元素

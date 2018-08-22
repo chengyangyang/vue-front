@@ -46,7 +46,7 @@
         <el-menu-item index="/mytest"><router-link to="/mytest">我的测试</router-link></el-menu-item>
         <!--<el-menu-item index="18">欧美剧</el-menu-item>-->
       </el-menu>
-      <!--<keep-alive>-->
+      <!--<keep-alive> 页面只加载一次,一个页面加载,可能就会出现,路由参数不变的情况-->
         <router-view/>
       <!--</keep-alive>-->
       <footDiv></footDiv>
