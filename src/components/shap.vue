@@ -59,7 +59,7 @@
 
 <script>
   import { mapState,mapGetters } from 'vuex'
-import {comData,databb} from '../service/server'
+import {comData,databb,cross} from '../service/server'
 export default {
   name: 'shap',
   data: function () {
@@ -142,8 +142,15 @@ export default {
           console.log(err);
         }
       );
+
+      cross().then(function (data) {
+        console.log("跨域请求")
+        console.log(data)
+      })
+
+
       this.$get('../../static/data/shap.json').then((response) => {
-        this.shapList = response
+        //this.shapList = response
       })
     }
   },
