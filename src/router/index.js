@@ -41,6 +41,11 @@ export default new Router({
           path:'/mytest', //我的个人测试
           name:'mytest',
           component:mytest
+        },
+        {
+          path:'/compent', //我的个人测试
+          name:'compent',
+          component: resolve=>require(['@/view/component'],resolve)
         }
       ]
     },

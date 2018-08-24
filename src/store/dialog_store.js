@@ -6,7 +6,7 @@ export default {
   state: {
     show: false,
     testList:['消消',"乐乐","憨憨"],
-    count:1
+    count:222
   },
   //提供存储设置state数据的方法
   mutations: {
@@ -16,12 +16,15 @@ export default {
     },
     // 加1
     [increment](state,param) {//第二个数可以作为参数传递
-      state.count += param;
+      state.count ++;
 
     },
     // 减1
     decrement(state) {
       state.count--
+    },
+    addTo(state){
+      state.testList.push("小小心")
     }
   },
   //提供和后台接口打交道的方法，并调用mutations提供的方法,官方推荐 , 将异步操作放在 action 中。
