@@ -59,7 +59,7 @@
 
 <script>
   import { mapState,mapGetters } from 'vuex'
-import {comData,databb,cross} from '../service/server'
+import * as services from '../service/server'
 export default {
   name: 'shap',
   data: function () {
@@ -136,14 +136,14 @@ export default {
     },
     getLocalData () { // 请求本地数据
       var _this = this;
-      comData().then(function (data) {
+      services.comData().then(function (data) {
         _this.shapList = data;
       }).catch(function (err) {
           console.log(err);
         }
       );
 
-      cross().then(function (data) {
+      services.cross().then(function (data) {
         console.log("跨域请求")
         console.log(data)
       })
