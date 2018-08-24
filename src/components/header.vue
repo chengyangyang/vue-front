@@ -30,7 +30,7 @@
         <el-menu-item index="/index"><router-link to="/index">首页</router-link></el-menu-item>
         <el-menu-item index="/movie"><router-link to="/movie">电影</router-link></el-menu-item>
         <el-menu-item index="/shap"><router-link to="/shap">电视剧</router-link></el-menu-item>
-        <el-menu-item index="4"><a href="#">综艺</a></el-menu-item>
+        <el-menu-item index="4"><router-link to="/compent">组件test</router-link></el-menu-item>
         <el-menu-item index="5"><a href="#">动漫</a></el-menu-item>
         <el-menu-item index="6" disabled> </el-menu-item>
         <el-menu-item index="7" disabled> </el-menu-item>
@@ -42,7 +42,7 @@
         <el-menu-item index="13">剧情片</el-menu-item>
         <el-menu-item index="14">战争片</el-menu-item>
         <el-menu-item index="15">国产剧</el-menu-item>
-        <el-menu-item index="16">港台剧</el-menu-item>
+        <!--<el-menu-item index="16">港台剧</el-menu-item>-->
         <el-menu-item index="/mytest"><router-link to="/mytest">我的测试</router-link></el-menu-item>
         <!--<el-menu-item index="18">欧美剧</el-menu-item>-->
       </el-menu>
